@@ -36,9 +36,9 @@ jobs:
             ${{ runner.os }}-hugomod-
 
       # GitHub Pages 配置
-      - name: Setup Pages
-        id: pages
-        uses: actions/configure-pages@v5
+#      - name: Setup Pages
+#        id: pages
+#        uses: actions/configure-pages@v5
 
       # hugo build
       - name: Build with Hugo
@@ -56,6 +56,11 @@ jobs:
       - name: Deploy
         uses: JamesIves/github-pages-deploy-action@v4.3.3
         with:
+          # token： setting -> Developer Settings -> classic token
+          token: ${{ secrets.PERSONAL_TOKEN }}
+
+          # deploy repository
+          repository-name: B324-Z-pub
           # 项目配置的打包目录名称
           folder: public
           # 提交分支名
