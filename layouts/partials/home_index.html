@@ -35,7 +35,7 @@ https://blog.csdn.net/chenmo2001/article/details/117674446
 
 {{/*
   Recent works
-*/}}
+
 
 <section id="section-recent-works" class="home-section ">
   <div class="container">
@@ -62,18 +62,18 @@ https://blog.csdn.net/chenmo2001/article/details/117674446
     </div>
   </div>
 </section>
-
+*/}}
 
 
 
 {{/*
   Publications
-*/}}
+
 <section id="section-publications" class="home-section ">
   <div class="container">
     <div class="section-c-title" >Publications</div>
     <div class="">
-      <div style="padding-bottom: 2rem;">Full list in <a href="https://scholar.google.com/citations?user=R3_AR5EAAAAJ&hl=en">Google Scholar</a>. </div>
+      <div style="padding-bottom: 2rem;">Full list in <a href="https://scholar.google.com/citations?user=_-JylBkAAAAJ&hl=en">Google Scholar</a>. </div>
       <ul class="">
         {{ range  .Site.Data.publications }}
           <li class="">
@@ -87,44 +87,12 @@ https://blog.csdn.net/chenmo2001/article/details/117674446
   </div>
 </section>
 
-
-
-{{/*
-  Members
 */}}
 
-<section id="section-members" class="home-section ">
-  <div class="container">
-    <div class="section-c-title" >Members</div>
-    <div class="grid grid-cols-1 gap-x-6 gap-y-16 lg:grid-cols-6">
-      {{ range .Site.Data.members }}
-
-        {{- $image2 := resources.Get (path.Join "media" .image) -}}
-
-        <div class="">
-
-          <div class="card"  >
-            <img src="{{ $image2.RelPermalink }}" alt="">
-            <div class="card-body">
-              <!-- <h5 class="card-title">title</h5> -->
-              <div class="card-text">{{ .name | safeHTML }}</div>
-              <div class="card-text m-role">{{ .role | safeHTML }}</div>
-              {{if .period}}<div class="card-text">({{ .period | safeHTML }})</div>{{ end }}
-              <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
-            </div>
-          </div>
-
-        </div>
-      {{ end }}
-
-    </div>
-  </div>
-</section>
 
 
 
 
-{{/*
 {{ $newsBlock := .Params.newsBlock }}
 {{ $pubsBlock := .Params.publicationsBlock }}
 {{ $news_args := dict "wcPage" $ "wcBlock" $newsBlock "wcIdentifier" "latest_news" }}
@@ -132,17 +100,24 @@ https://blog.csdn.net/chenmo2001/article/details/117674446
 <section id="section-news" class="home-section wg-news">
   <div class="container">
     <div class="row">
-      <div class="col-12 col-md-7 text-center text-md-left">
-          <div><h1>{{ $newsBlock.content.title }}</h1></div>
+      <div class="col-12 col-md-6 text-center text-md-left">
+          <div class="common-block-title">{{ $newsBlock.content.title }}</div>
           {{ partial "blocks/collection.html" $news_args }}
       </div>
 
-      <div class="col-12 col-md-5  text-center text-md-left ">
-        <div><h1>{{ $pubsBlock.content.title }}</h1></div>
-          {{ partial "blocks/collection.html" $pubs_args }}
+      <div class="col-12 col-md-6  text-center text-md-left ">
+        <div class="common-block-title">Latest Publications</div>
+        <div style="padding-bottom: 2rem;">Full list in <a href="https://scholar.google.com/citations?user=_-JylBkAAAAJ&hl=en">Google Scholar</a>. </div>
+        <ul class="">
+          {{$pubs := sort  .Site.Data.publications "year" "desc" }}
+          {{ range  $pubs }}
+            <li class="">
+              {{ partial "views/pub_item.html" . }}
+            </li>
+          {{ end }}
+        </ul>
       </div>
     </div>
   </div>
 </section>
-*/}}
 
