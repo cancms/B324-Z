@@ -53,6 +53,7 @@ jobs:
 
 
 
+
       # 部署
       - name: Deploy
         uses: JamesIves/github-pages-deploy-action@v4.3.3
@@ -61,7 +62,7 @@ jobs:
           token: ${{ secrets.PERSONAL_TOKEN }}
 
           # deploy repository
-          repository-name: B324-Z-pub
+          repository-name: cancms/B324-Z-pub
           # 项目配置的打包目录名称
           folder: public
           # 提交分支名
