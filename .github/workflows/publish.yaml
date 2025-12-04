@@ -43,14 +43,14 @@ jobs:
 #        id: pages
 #        uses: actions/configure-pages@v5
 
-      # hugo build
       - name: Build with Hugo
         env:
           HUGO_ENVIRONMENT: production
         run: |
           echo "Hugo Cache Dir: $(hugo config | grep cachedir)"
-#          hugo --minify --baseURL "${{ steps.pages.outputs.base_url }}/"
           hugo --minify
+#          hugo --minify --baseURL "${{ steps.pages.outputs.base_url }}/"
+
 
 
 
