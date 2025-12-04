@@ -1,11 +1,25 @@
-team_groups:
-  - key: professor
-    name:
+member_groups:
 
-team_members:
+  - key: professor
+    name: Professor
+
+  - key: associate_researcher
+    name: Associate Researcher
+
+  - key: postdoctoral_fellows
+    name: Postdoctoral Fellow
+
+  - key: phd_students
+    name: PhD Student
+
+  - key: master_students
+    name: Master Student
+
+members:
   professor:
     - name: "Miao Zhong"
       title: "Professor"
+      avatar: "images/members/MiaoZhong.png"
 
   associate_researcher:
     - name: "Haoyang Jiang"

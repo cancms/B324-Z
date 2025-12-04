@@ -6,7 +6,7 @@
 html, body {
 
   font-family: montserrat,PingFang SC,Microsoft YaHei,微软雅黑,STXihei,华文细黑,sans-serif;
-  font-size: 16px;
+  font-size: 18px;
   color: #000;
 
 }
@@ -90,25 +90,36 @@ html, body {
   }
 
 
+
 }
 
 
-@media (max-width: 478px) {
-  .navbar-brand {
-    margin: 0 auto;
+
+
+.members-list-page{
+  .group-name {
+    font-weight: bold;
   }
+  .people-person {
+    margin-top: 1rem;
+    .avatar-title{
+
+
+      .user-icon-avatar {
+        font-size: 2rem;
+        height: 150px;
+        width: 150px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border: 1px solid lightgray;
+      }
+    }
+
+  }
+
 }
 
-
-@media (min-width: 780px) {
-  .lg\:grid-cols-3 {
-      grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
-  }
-
-  .lg\:grid-cols-6 {
-      grid-template-columns: repeat(6, minmax(0, 1fr)) !important;
-  }
-}
 
 
 
@@ -137,4 +148,23 @@ html, body {
 
 .site-footer .powered-by {
   display: none;
+}
+
+
+
+@media (max-width: 478px) {
+  .navbar-brand {
+    margin: 0 auto;
+  }
+}
+
+
+@media (min-width: 780px) {
+  .lg\:grid-cols-3 {
+    grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+  }
+
+  .lg\:grid-cols-6 {
+    grid-template-columns: repeat(6, minmax(0, 1fr)) !important;
+  }
 }
