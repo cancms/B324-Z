@@ -53,19 +53,30 @@ jobs:
 
 
 
+      #  生成 gh-pages 分支 的内容
+      - name: Deploy Web
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          # token： setting -> Developer Settings -> classic token
+          PERSONAL_TOKEN: ${{ secrets.PERSONAL_TOKEN }}
+          # build to other repository
+          EXTERNAL_REPOSITORY: cancms/B324-Z-pub
+          PUBLISH_BRANCH: gh-pages
+          PUBLISH_DIR: ./public
+          commit_message: ${{ github.event.head_commit.message }}
 
 
 
       # 部署
-      - name: Deploy
-        uses: JamesIves/github-pages-deploy-action@v4.3.3
-        with:
-          # token： setting -> Developer Settings -> classic token
-          token: ${{ secrets.PERSONAL_TOKEN }}
-
-          # deploy repository
-          repository-name: cancms/B324-Z-pub
-          # 项目配置的打包目录名称
-          folder: public
-          # 提交分支名
-          branch: gh-pages
+#      - name: Deploy
+#        uses: JamesIves/github-pages-deploy-action@v4.3.3
+#        with:
+#          # token： setting -> Developer Settings -> classic token
+#          token: ${{ secrets.PERSONAL_TOKEN }}
+#
+#          # deploy repository
+#          repository-name: cancms/B324-Z-pub
+#          # 项目配置的打包目录名称
+#          folder: public
+#          # 提交分支名
+#          branch: gh-pages
