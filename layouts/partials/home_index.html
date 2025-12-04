@@ -109,7 +109,7 @@ https://blog.csdn.net/chenmo2001/article/details/117674446
         <div class="common-block-title">Latest Publications</div>
         <div style="padding-bottom: 2rem;">Full list in <a href="https://scholar.google.com/citations?user=_-JylBkAAAAJ&hl=en">Google Scholar</a>. </div>
         <ul class="">
-          {{$pubs := sort  .Site.Data.publications "year" "desc" }}
+          {{$pubs := first 5 (sort  .Site.Data.publications "year" "desc")  }}
           {{ range  $pubs }}
             <li class="">
               {{ partial "views/pub_item.html" . }}

@@ -1,3 +1,7 @@
+team_groups:
+  - key: professor
+    name:
+
 team_members:
   professor:
     - name: "Miao Zhong"
