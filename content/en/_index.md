@@ -34,16 +34,16 @@ heroSlideBlock:
 
     slides:
 
-    - title: "" # desc-title1
-      content:  "" # desc1
-      align: center
-      background:
-        image:
-          filename: group_slides/g1.png
-          filters:
-            brightness: 1
-        position: right
-        color: '#666'  
+#    - title: "" # desc-title1
+#      content:  "" # desc1
+#      align: center
+#      background:
+#        image:
+#          filename: group_slides/g1.png
+#          filters:
+#            brightness: 1
+#        position: right
+#        color: '#666'  
 
     - title:  "" # desc-title2
       content:  "" # desc2

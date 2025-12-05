@@ -1,13 +1,13 @@
 
 {{/*  lab 介绍  */}}
 {{ $heroBlock := .Params.heroBlock }}
-<section id="section-hero" class="home-section wg-hero">
+<section  id="section-hero" class="home-section wg-hero" >
   <div class="container">
     <div class="row">
       <div class="col-12 hero-title" >{{ $heroBlock.content.title | markdownify }}</div>
     </div>
     <div class="row">
-      <div class="col-12 hero-desc-txt" >{{ $heroBlock.content.text | markdownify }}</div>
+      <div class="col-12 hero-desc-txt" >{{/* $heroBlock.content.text | markdownify */}}</div>
     </div>
   </div>
 </section>
@@ -20,7 +20,7 @@ https://blog.csdn.net/chenmo2001/article/details/117674446
 */}}
 {{ $slider_hash_id := "hero_sliders" }}
 {{ $slider_args := dict "wcPage" $ "wcBlock" .Params.heroSlideBlock "wcIdentifier" $slider_hash_id }}
-<section id="section-hero" class="home-section wg-hero">
+<section  id="section-home-slide" class="home-section wg-home-slide">
   <div class="container">
     <div class="row">
       <div class="col-12  hero-media carousel slide " data-ride="carousel"  id="{{ $slider_hash_id }}">
@@ -107,7 +107,7 @@ https://blog.csdn.net/chenmo2001/article/details/117674446
 
       <div class="col-12 col-md-6  text-center text-md-left ">
         <div class="common-block-title">Latest Publications</div>
-        <div style="padding-bottom: 2rem;">Full list in <a href="https://scholar.google.com/citations?user=_-JylBkAAAAJ&hl=en">Google Scholar</a>. </div>
+
         <ul class="">
           {{$pubs := first 5 (sort  .Site.Data.publications "year" "desc")  }}
           {{ range  $pubs }}
