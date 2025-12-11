@@ -12,7 +12,6 @@ gallery1:
 ---
 
 
-### 团队图集
 {{< gallery   album="gallery"  resize_options="500x300" >}}
 
 
